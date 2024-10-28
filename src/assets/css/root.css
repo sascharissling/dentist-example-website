@@ -290,6 +290,7 @@
     background-color: #1a1a1a;
     height: 2px;
     width: 100%;
+    background-color: var(--primary);
   }
   #cs-navigation .cs-line1 {
     top: 0;
@@ -302,7 +303,6 @@
     animation-direction: normal;
     animation-fill-mode: forwards;
     transform-origin: center;
-    background-color: var(--primary);
   }
   #cs-navigation .cs-line2 {
     top: 50%;
@@ -634,10 +634,10 @@
   #cs-navigation .cs-line {
     width: 100%;
     height: 2px;
-    background-color: #fafbfc;
     border-radius: 2px;
     position: absolute;
     left: 50%;
+    background-color: var(--primary);
     transform: translateX(-50%);
   }
   #cs-navigation .cs-line1 {
