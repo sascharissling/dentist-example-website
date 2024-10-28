@@ -1,0 +1,247 @@
+/*-- -------------------------- -->
+<---           Quote            -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #quote-2012 {
+    padding: var(--sectionPadding);
+    overflow: hidden;
+    position: relative;
+    background: var(--bodyTextColorWhite);
+  }
+  #quote-2012 .cs-container {
+    width: 100%;
+    max-width: 44rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* 48px - 100px */
+    gap: clamp(3rem, 6.5vw, 6.25rem);
+  }
+  #quote-2012 .cs-review {
+    text-align: center;
+    width: 100%;
+    /* prevents padding from adding to height and width */
+    box-sizing: border-box;
+    padding: 0;
+    border-radius: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  #quote-2012 .cs-topper {
+    color: var(--primary);
+  }
+  #quote-2012 .cs-review-text {
+    /* 25px - 39px */
+    font-size: clamp(1.5625rem, 3vw, 2.4375rem);
+    font-weight: 900;
+    line-height: 1.2em;
+    /* 24px - 32px */
+    margin: 0 0 clamp(1.5rem, 3vw, 2rem) 0;
+    color: var(--headerColor);
+    z-index: 1;
+  }
+  #quote-2012 .cs-flex-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  #quote-2012 .cs-name {
+    /* 16px - 25px */
+    font-size: clamp(1rem, 2.3vw, 1.5625rem);
+    font-weight: 700;
+    line-height: 1.2em;
+    margin: 0;
+    /* in case one card has more text than the other, this pushes up against the review text so the name and title are always at the bottom. Only works if parent is a flexbox */
+    margin-top: auto;
+    color: var(--primary);
+    display: block;
+  }
+  #quote-2012 .cs-job {
+    /* 14px - 16px */
+    font-size: clamp(0.875rem, 1.6vw, 1rem);
+    line-height: 1.5em;
+    margin: 0;
+    color: var(--bodyTextColor);
+    display: block;
+  }
+  #quote-2012 .cs-card-group {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    /* 16px - 20px */
+    gap: clamp(1rem, 2vw, 1.25rem);
+  }
+  #quote-2012 .cs-item {
+    text-align: left;
+    list-style: none;
+    width: 100%;
+    min-width: 0;
+    /* 420px - 550px */
+    height: clamp(26.25rem, 40vw, 34.375rem);
+    margin: 0;
+    /* prevents padding and border from affecting height and width */
+    box-sizing: border-box;
+    padding: 0;
+    box-shadow: 0px 12px 80px 0px rgba(26, 26, 26, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    position: relative;
+    z-index: 1;
+    transition: width 0.3s ease, flex 0.3s ease;
+  }
+  #quote-2012 .cs-item.expanded {
+    width: 40%;
+    /* Expanded width */
+    flex: none;
+  }
+  #quote-2012 .cs-link {
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* we use flexbox here to grow the link to fit the whole item, making it clickable everywhere, no matter the size */
+    position: relative;
+    z-index: 1;
+  }
+  #quote-2012 .cs-link::after {
+    /* hover overlay */
+    content: "";
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    /* as we can't animate background gradients, we animate the change of opacity from 0 to 1 */
+    transition: opacity 0.3s;
+  }
+  #quote-2012 .cs-number {
+    /* 25px - 39px */
+    font-size: clamp(1.5625rem, 2.7vw, 2.4375rem);
+    font-weight: bold;
+    color: var(--bodyTextColorWhite);
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: opacity 0.3s, top 0.3s;
+  }
+  #quote-2012 .cs-h3 {
+    /* 20px - 25px */
+    font-size: clamp(1.25rem, 1.8vw, 1.5625rem);
+    font-weight: bold;
+    line-height: 1.2em;
+    text-align: inherit;
+    margin: 0 0 0.25rem 0;
+    color: var(--bodyTextColorWhite);
+    transition: color 0.3s;
+  }
+  #quote-2012 .cs-item-text {
+    /* 14px - 16px */
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.5em;
+    margin: 0;
+    padding: 0;
+    color: var(--bodyTextColorWhite);
+  }
+  #quote-2012 .cs-picture {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  #quote-2012 .cs-picture:after {
+    /* background color overlay on hover */
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+    opacity: 0;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+    transition: opacity 0.3s;
+  }
+  #quote-2012 .cs-picture img {
+    width: 100%;
+    height: 100%;
+    /* Makes img tag act as a background image */
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: transform 0.3s;
+  }
+  #quote-2012 .cs-resize {
+    /* 48px -60px */
+    width: clamp(3rem, 6vw, 3.75rem);
+    height: auto;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  #quote-2012 .cs-waves {
+    width: 150%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #quote-2012 .cs-container {
+    max-width: 80rem;
+  }
+  #quote-2012 .cs-card-group {
+    flex-direction: row;
+  }
+  #quote-2012 .cs-item {
+    width: 25%;
+    flex: 1;
+  }
+  #quote-2012 .cs-item:hover .cs-picture::after {
+    opacity: 1;
+  }
+  #quote-2012 .cs-item:hover .cs-picture img {
+    transform: scale(1.2);
+  }
+  #quote-2012 .cs-item:hover .cs-resize {
+    opacity: 1;
+  }
+}
+/* Large Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+  #quote-2012 .cs-item {
+    width: 25%;
+  }
+  #quote-2012 .cs-resize {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=stats.css.map */
