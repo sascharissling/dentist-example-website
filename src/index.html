@@ -1,388 +1,762 @@
 ---
-title: 'Pixel Perfect Websites | Code Stitch Web Designs | Denver, CO'
-description: 'Meta description for the page'
-preloadImg: '/assets/images/landing.jpg'
-permalink: '/'
-tags: 'sitemap' # Sitemap will use all pages in content/, due to content.json. As index.html is not included in content/ we need to manually add the sitemap tag to this page (only).
+title: "Pixel Perfect Websites | Code Stitch Web Designs | Denver, CO"
+description: "Meta description for the page"
+preloadImg: "/assets/images/landing.jpg"
+permalink: "/"
+tags: "sitemap" # Sitemap will use all pages in content/, due to content.json. As index.html is not included in content/ we need to manually add the sitemap tag to this page (only).
 eleventyNavigation:
   key: Home
   order: 100
 ---
 
-{% extends "layouts/base.html" %}
+{% extends "layouts/base.html" %} {% block head %}
+<link rel="stylesheet" href="/assets/css/local.css" />
+<link rel="stylesheet" href="/assets/css/critical.css" />
+<link rel="stylesheet" href="/assets/css/services.css" />
+<link rel="stylesheet" href="/assets/css/stats.css" />
 
-{% block head %}
-    <link rel="stylesheet" href="/assets/css/local.css"/>
-    <link rel="stylesheet" href="/assets/css/critical.css"/>
+<!-- Script for Netlify Identity -->
+<script
+  defer
+  src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+></script>
+<script defer>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", (user) => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 
-    <!-- Script for Netlify Identity -->
-    <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script defer>
-        if (window.netlifyIdentity) {
-            window
-                .netlifyIdentity
-                .on('init', (user) => {
-                    if (!user) {
-                        window
-                            .netlifyIdentity
-                            .on('login', () => {
-                                document.location.href = '/admin/';
-                            });
-                    }
-                });
-        }
-    </script>
+<!-- JSON Schema Markup -->
+<script type="application/ld+json">
+  {
+      "@context": "http://schema.org",
+      "@type": "LocalBusiness",
+      "name": "{{ client.name }}",
+      {% if preloadImg %}"image": "{{ preloadImg }}",{% endif %}
+      {% if client.phoneFormatted %}"telephone": "{{ client.phoneFormatted }}",{% endif %}
+      {% if client.email %}"email": "{{ client.email }}",{% endif %}
+      {% if client.address %}
+          "address": {
+              "@type": "PostalAddress"{% if client.address.lineOne %},
+                  "streetAddress": "{{ client.address.lineOne }}{% if client.address.lineTwo %}, {{ client.address.lineTwo }}{% endif %}"
+              {% endif %}
+              {% if client.address.city %},
+                  "addressLocality": "{{ client.address.city }}"
+              {% endif %}
+              {% if client.address.state %},
+                  "addressRegion": "{{ client.address.state }}"
+              {% endif %}
+              {% if client.address.zip %},
+                  "postalCode": "{{ client.address.zip }}"
+              {% endif %}
+              {% if client.address.country %},
+                  "addressCountry": "{{ client.address.country }}"
+              {% endif %}
+          },
+      {% endif %}
+      {% if client.domain and page.url %}"url": "{{ client.domain }}{{ page.url }}",{% endif %}
+      {% if client.socials %}
+          "sameAs": [{% for platform, url in client.socials %}
+                  {% if not loop.first %},{% endif %}
+                  "{{ url }}"
+              {% endfor %}]
+      {% endif %}
+  }
+</script>
+{% endblock %} {% block body %}
 
-    <!-- JSON Schema Markup -->
-    <script type="application/ld+json">
-        {
-            "@context": "http://schema.org",
-            "@type": "LocalBusiness",
-            "name": "{{ client.name }}",
-            {% if preloadImg %}"image": "{{ preloadImg }}",{% endif %}
-            {% if client.phoneFormatted %}"telephone": "{{ client.phoneFormatted }}",{% endif %}
-            {% if client.email %}"email": "{{ client.email }}",{% endif %}
-            {% if client.address %}
-                "address": {
-                    "@type": "PostalAddress"{% if client.address.lineOne %},
-                        "streetAddress": "{{ client.address.lineOne }}{% if client.address.lineTwo %}, {{ client.address.lineTwo }}{% endif %}"
-                    {% endif %}
-                    {% if client.address.city %},
-                        "addressLocality": "{{ client.address.city }}"
-                    {% endif %}
-                    {% if client.address.state %},
-                        "addressRegion": "{{ client.address.state }}"
-                    {% endif %}
-                    {% if client.address.zip %},
-                        "postalCode": "{{ client.address.zip }}"
-                    {% endif %}
-                    {% if client.address.country %},
-                        "addressCountry": "{{ client.address.country }}"
-                    {% endif %}
-                },
-            {% endif %}
-            {% if client.domain and page.url %}"url": "{{ client.domain }}{{ page.url }}",{% endif %}
-            {% if client.socials %}
-                "sameAs": [{% for platform, url in client.socials %}
-                        {% if not loop.first %},{% endif %}
-                        "{{ url }}"
-                    {% endfor %}]
-            {% endif %}
-        }
-    </script>
-{% endblock %}
+<!-- ============================================ -->
+<!--                    Hero                      -->
+<!-- ============================================ -->
 
-{% block body %}
+<section id="hero-1950">
+  <div class="cs-container">
+    <div class="cs-content">
+      <h1 class="cs-title">Wir kümmern uns um Ihr strahlendes Lächeln!</h1>
+      <div class="cs-flex-group">
+        <p class="cs-text">
+          Mit modernster Technologie und einfühlsamer Betreuung sorgen wir in
+          unserer Kölner Praxis dafür, dass Sie sich bei uns von Anfang an
+          wohlfühlen.
+        </p>
+        <a href="" class="cs-button-solid">Termin vereinbaren</a>
+      </div>
+    </div>
+  </div>
 
-    <!-- ============================================ -->
-    <!--                    Hero                      -->
-    <!-- ============================================ -->
+  <!-- Background Image, there's a background image in the CSS for the parallax effect you'll need to change as well if you swap out our images -->
+  <picture class="cs-background">
+    <source
+      media="(max-width: 600px)"
+      srcset="/assets/images/dentist-hero.jpg"
+    />
+    <source
+      media="(min-width: 601px)"
+      srcset="/assets/images/dentist-hero.jpg"
+    />
+    <img
+      decoding="async"
+      src="/assets/images/dentist-hero.jpg"
+      alt="Zahnarzt"
+      width="2250"
+      height="1500"
+      aria-hidden="true"
+    />
+  </picture>
+</section>
 
-    <section id="hero">
-        <div class="cs-container">
-            <div class="cs-flex-group">
-                <span class="cs-topper">mountain hiking society</span>
-                <h1 class="cs-title">Explore the World with Exciting People</h1>
-                <p class="cs-text">
-                    Tincidunt lobortis feugiat vivamus at augue eget arcu dictum varius. Nibh tortor id aliquet lectus proin nibh condimentum.
-                </p>
-                <a href="/about" class="cs-button-solid">Explore More</a>
-                <a href="/contact" class="cs-button-transparent">
-                    <img
-                    class="cs-img"
-                    loading="lazy"
-                    decoding="async"
-                    src="https://csimg.nyc3.digitaloceanspaces.com/Hero/play.svg"
-                    alt="play icon"
-                    width="17"
-                    height="17"/>
-                    Get in Touch
-                </a>
-            </div>
-        </div>
+<!-- ============================================ -->
+<!--                  Services                    -->
+<!-- ============================================ -->
 
-        <!-- Background Image -->
-        <picture class="cs-picture">
-            <source media="(max-width: 600px)" srcset="/assets/images/landing-m.webp">
-            <source media="(min-width: 601px)" srcset="/assets/images/landing.jpg">
-            <img aria-hidden="true" decoding="async" src="/assets/images/landing.jpg" alt="new home" width="2500" height="1667" loading="eager">
-        </picture>
-    </section>
-
-    <!-- ============================================ -->
-    <!--                  Services                    -->
-    <!-- ============================================ -->
-
-    <section id="services" class="services">
-        <!-- Get Icons From flaticon.com -->
-        <div class="card">
-            <picture>
-                <img
-                aria-hidden="true"
-                decoding="async"
-                src="/assets/svgs/service1.svg"
-                alt="appliance"
-                width="48"
-                height="48"/>
-            </picture>
-            <h2>Service 1</h2>
-            <p>Talk about the service with keywords people will be searching for it by. Keep it 1-2 sentences.</p>
-        </div>
-        <div class="card">
-            <picture>
-                <img
-                aria-hidden="true"
-                decoding="async"
-                src="/assets/svgs/service2.svg"
-                alt="appliance"
-                width="48"
-                height="48"/>
-            </picture>
-            <h2>Service 2</h2>
-            <p>Talk about the service with keywords people will be searching for it by. Keep it 1-2 sentences.</p>
-        </div>
-        <div class="card">
-            <picture>
-                <img
-                aria-hidden="true"
-                decoding="async"
-                src="/assets/svgs/service3.svg"
-                alt="appliance"
-                width="48"
-                height="48"/>
-            </picture>
-            <h2>Service 3</h2>
-            <p>Talk about the service with keywords people will be searching for it by. Keep it 1-2 sentences.</p>
-        </div>
-    </section>
-
-    <!-- ============================================ -->
-    <!--                 Side By Side                 -->
-    <!-- ============================================ -->
-
-    <section id="sbs">
-        <div class="cs-container">
-            <!-- Left Image Section -->
-            <div class="cs-left">
-                <picture class="cs-picture cs-picture1">
-                    <source media="(max-width: 600px)" srcset="/assets/images/cabinets2-m.jpg">
-                    <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg">
-                    <img aria-hidden="true" decoding="async" src="/assets/images/cabinets2.jpg" alt="cabinets" loading="lazy" width="400" height="563">
-                </picture>
-                <picture class="cs-picture cs-picture2">
-                    <source media="(max-width: 600px)" srcset="/assets/images/construction-m.jpg">
-                    <source media="(min-width: 601px)" srcset="/assets/images/construction.jpg">
-                    <img aria-hidden="true" decoding="async" src="/assets/images/construction.jpg" alt="house" loading="lazy" width="400" height="563">
-                </picture>
-            </div>
-            <!-- Right Content Section-->
-            <div class="cs-right">
-                <span class="cs-topper">About Us</span>
-                <h2 class="cs-title">About Company Title</h2>
-                <p class="cs-text">
-                    In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per.
-                </p>
-                <p class="cs-text">
-                    In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per.
-                </p>
-                <div class="cs-flex-group">
-                    <p class="cs-flex-p">
-                        In consequat tincidunt turpis sit amet imperdiet. Praesent Classei consequat tincidunt turpis sit amet imperdiet for mind.
-                    </p>
-                    <span class="cs-name">Justin Time</span>
-                    <span class="cs-job">CEO-Founder</span>
-                    <img 
-                    class="cs-quote-icon"
-                    loading="lazy"
-                    decoding="async"
-                    src="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/quote-white.svg"
-                    alt="gavel"
-                    width="136"
-                    height="77"/>
-                </div>
-                <a href="/about" class="cs-button-solid">More About Us</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================ -->
-    <!--            Extra Content To Rank             -->
-    <!-- ============================================ -->
-
-    <section id="sbs-r">
-        <div class="cs-container">
-            <!-- Left Image Section -->
-            <div class="cs-left">
-                <picture class="cs-picture cs-picture1">
-                    <source media="(max-width: 600px)" srcset="/assets/images/construction-m.jpg">
-                    <source media="(min-width: 601px)" srcset="/assets/images/construction.jpg">
-                    <img aria-hidden="true" decoding="async" src="/assets/images/construction.jpg" alt="house" loading="lazy" width="400" height="560">
-                </picture>
-                <picture class="cs-picture cs-picture2">
-                    <source media="(max-width: 600px)" srcset="/assets/images/cabinets2-m.jpg">
-                    <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg">
-                    <img aria-hidden="true" decoding="async" src="/assets/images/cabinets2.jpg" alt="cabinets" loading="lazy" width="400" height="560">
-                </picture>
-            </div>
-            <!-- Right Content Section-->
-            <div class="cs-right">
-                <span class="cs-topper">SEO Ranking</span>
-                <h2 class="cs-title">Talk about a main service keyword</h2>
-                <p class="cs-text">
-                    In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per.
-                </p>
-                <p class="cs-text">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non tenetur, iure nihil ipsam qui atque commodi id voluptatem nesciunt, quis animi fuga cum doloribus! Eaque laboriosam, unde consectetur iure asperiores ullam. Consequuntur debitis a voluptatibus vitae optio autem explicabo quia neque est quas, in placeat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus modi laudantium voluptatibus rem libero error minus quia eligendi sapiente eos.
-                </p>
-                <a href="/blog" class="cs-button-solid">Read our Blog</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================ -->
-    <!--                   Gallery                    -->
-    <!-- ============================================ -->
-
-    <section id="gallery">
-        <div class="cs-container">
-            <span class="cs-topper">Our Portfolio</span>
-            <h2 class="cs-title">Et orci volutpat, back up generator installations</h2>
-            <div class="cs-image-group">
-                <!-- Row 1-->
-                <div class="cs-row cs-row-1">
-                    <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
-                    <picture class="cs-picture cs-picture1">
-                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port1-m.jpg">
-                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port1.jpg">
-                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port1.jpg" alt="new hallway" loading="lazy" width="400" height="560">
-                    </picture>
-                    <picture class="cs-picture cs-picture2">
-                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port4-m.jpg">
-                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port4.jpg">
-                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port4.jpg" alt="new home construction" loading="lazy" width="400" height="560">
-                    </picture>
-                    <picture class="cs-picture cs-picture3">
-                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port7-m.jpg">
-                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port7.jpg">
-                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port7.jpg" alt="building a new wall" loading="lazy" width="400" height="560">
-                    </picture>
-                </div>
-                <!-- Row 2 -->
-                <div class="cs-row cs-row-2">
-                    <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
-                    <picture class="cs-picture cs-picture1">
-                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port2-m.jpg">
-                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port2.jpg">
-                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port2.jpg" alt="new kitchen" loading="lazy" width="400" height="560">
-                    </picture>
-                    <picture class="cs-picture cs-picture2">
-                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port5-m.jpg">
-                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port5.jpg">
-                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port5.jpg" alt="apartment addition" loading="lazy" width="400" height="560">
-                    </picture>
-                    <picture class="cs-picture cs-picture3">
-                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port8-m.jpg">
-                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port8.jpg">
-                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port8.jpg" alt="kew kitchen cabinets" loading="lazy" width="400" height="560">
-                    </picture>
-                </div>
-                <!-- Row 3 -->
-                <div class="cs-row cs-row-3">
-                    <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
-                    <picture class="cs-picture cs-picture1">
-                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port3-m.jpg">
-                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port3.jpg">
-                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port3.jpg" alt="new kitchen" loading="lazy" width="400" height="560">
-                    </picture>
-                    <picture class="cs-picture cs-picture2">
-                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port6-m.jpg">
-                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port6.jpg">
-                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port6.jpg" alt="apartment addition" loading="lazy" width="400" height="560">
-                    </picture>
-                    <picture class="cs-picture cs-picture3">
-                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/port9-m.jpg">
-                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/port9.jpg">
-                        <img aria-hidden="true" decoding="async" src="/assets/images/portfolio/port9.jpg" alt="kew kitchen cabinets" loading="lazy" width="400" height="560">
-                    </picture>
-
-                </div>
-            </div>
-            <a href="/projects" class="cs-button-solid">View Full Gallery</a>
-        </div>
-    </section>
-
-    <!-- ============================================ -->
-    <!--                   Reviews                    -->
-    <!-- ============================================ -->
-
-    <section id="reviews">
-        <div class="cs-container">
-            <span class="cs-topper">Our Reviews</span>
-            <h2 class="cs-title">Words From Our Customers</h2>
-            <p class="cs-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit dolor volutpat porttitor sagittis nunc nisl. Sagittis sit pellentesque gravida viverra. Leo ut sed euismod tortor risus et. Ornare non neque, leo, ornare. Lorem ipsum dolor sit amet.
+<section id="services-1977">
+  <div class="cs-container">
+    <div class="cs-content">
+      <span class="cs-topper">ZAHNPFLEGE FÜR ALLE </span>
+      <h2 class="cs-title">Entdecken Sie unsere Leistungen</h2>
+      <p class="cs-text">
+        Von der Vorsorge bis zur wiederherstellenden Zahnmedizin ist unser Team
+        der bestmöglichen zahnmedizinischen Versorgung verpflichtet.
+      </p>
+    </div>
+    <div class="cs-wrapper">
+      <ul class="cs-ul">
+        <li class="cs-li">
+          <picture class="cs-li-picture">
+            <img
+              class="cs-li-icon"
+              aria-hidden="true"
+              src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/tooth-gum.svg"
+              decoding="async"
+              alt="icon"
+              width="80"
+              height="80"
+              loading="lazy"
+            />
+          </picture>
+          <div class="cs-flex">
+            <h3 class="cs-h3">Zahnfleischoperation</h3>
+            <p class="cs-li-text">
+              Modernste chirurgische Techniken zur Behandlung von
+              Zahnfleischproblemen. Unsere spezialisierten Eingriffe helfen bei
+              der Wiederherstellung eines gesunden Zahnfleischs und schützen
+              Ihre Zähne langfristig.
             </p>
-            <ul class="cs-card-group">
-                <!-- Review 1 -->
-                <li class="cs-item">
-                    <img
-                    class="cs-item-img"
-                    aria-hidden="true"
-                    loading="lazy"
-                    decoding="async"
-                    src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/profile5.png"
-                    alt="profile picture"
-                    width="80"
-                    height="80"/>
-                    <p class="cs-item-p">
-                        Dictum dolor, nullam morbi sem in auctor proin. Consequat dolor habitasse nam sed tempor. Viverra magna pharetra rhoncus, nec sed ullamcorper lectus et. Auctor velit diam fermentum consequat. Feugiat viverra massa urna, volutpat orci imperdiet eget eget.
-                    </p>
-                    <span class="cs-reviewer">
-                        Jon Doe
-                        <span class="cs-desc">Homeowner</span>
-                    </span>
-                    <img
-                    class="cs-item-stars"
-                    aria-hidden="true"
-                    loading="lazy"
-                    decoding="async"
-                    src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/stars-yellow.svg"
-                    alt="stars"
-                    width="96"
-                    height="16"/>
-                </li>
-                <!-- Review 2 -->
-                <li class="cs-item">
-                    <img
-                    class="cs-item-img"
-                    aria-hidden="true"
-                    loading="lazy"
-                    decoding="async"
-                    src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/profile-4.png"
-                    alt="profile picture"
-                    width="80"
-                    height="80"/>
-                    <p class="cs-item-p">
-                        Dictum dolor, nullam morbi sem in auctor proin. Consequat dolor habitasse nam sed tempor. Viverra magna pharetra rhoncus, nec sed ullamcorper lectus et. Auctor velit diam fermentum consequat. Feugiat viverra massa urna, volutpat orci imperdiet eget eget.
-                    </p>
-                    <span class="cs-reviewer">
-                        Jane Doe
-                        <span class="cs-desc">Homeowner</span>
-                    </span>
-                    <img
-                    class="cs-item-stars"
-                    aria-hidden="true"
-                    loading="lazy"
-                    decoding="async"
-                    src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/stars-yellow.svg"
-                    alt="stars"
-                    width="96"
-                    height="16"/>
-                </li>
-            </ul>
-            <a aria-label="read more reviews" href="/reviews" class="cs-button-solid">Our Reviews</a>
+          </div>
+        </li>
+        <li class="cs-li">
+          <picture class="cs-li-picture">
+            <img
+              class="cs-li-icon"
+              aria-hidden="true"
+              src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/braces-rubber-bands.svg"
+              decoding="async"
+              alt="icon"
+              width="80"
+              height="80"
+              loading="lazy"
+            />
+          </picture>
+          <div class="cs-flex">
+            <h3 class="cs-h3">Zahnversiegelungen</h3>
+            <p class="cs-li-text">
+              Präventiver Schutz für Ihre Zähne, besonders effektiv bei Kindern
+              und Jugendlichen. Die schmerzfreie Versiegelung der Kauflächen
+              verhindert Karies und bewahrt die natürliche Zahnsubstanz.
+            </p>
+          </div>
+        </li>
+        <li class="cs-li">
+          <picture class="cs-li-picture">
+            <img
+              class="cs-li-icon"
+              aria-hidden="true"
+              src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/tooth-loosen.svg"
+              decoding="async"
+              alt="icon"
+              width="80"
+              height="80"
+              loading="lazy"
+            />
+          </picture>
+          <div class="cs-flex">
+            <h3 class="cs-h3">Zahnfleischerkrankungen</h3>
+            <p class="cs-li-text">
+              Frühzeitige Diagnose und umfassende Behandlung von Gingivitis bis
+              Parodontitis. Wir bieten individuelle Therapiepläne und
+              professionelle Beratung zur Vorbeugung von Zahnfleischproblemen.
+            </p>
+          </div>
+        </li>
+      </ul>
+      <ul class="cs-card-group">
+        <li class="cs-item">
+          <div class="cs-flex">
+            <h3 class="cs-h3">Zahnimplantate</h3>
+            <p class="cs-item-text">
+              Hochwertige Implantatlösungen für fehlende Zähne. Mit modernster
+              3D-Planung und schonender Operationstechnik schaffen wir natürlich
+              aussehende, langlebige Ergebnisse für Ihr strahlendes Lächeln.
+            </p>
+          </div>
+          <a href="" class="cs-link"> Mehr Informationen </a>
+          <picture class="cs-picture">
+            <img
+              class="cs-image"
+              loading="lazy"
+              decoding="async"
+              src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/implant.png"
+              alt="icon"
+              width="181"
+              height="102"
+            />
+          </picture>
+        </li>
+        <li class="cs-item">
+          <div class="cs-flex">
+            <h3 class="cs-h3">Zahnfleisch-OP's</h3>
+            <p class="cs-item-text">
+              Minimalinvasive chirurgische Eingriffe mit kurzen Heilungszeiten.
+              Von Wurzelspitzenresektionen bis zu ästhetischen Korrekturen - wir
+              bieten das gesamte Spektrum der modernen Zahnfleischchirurgie.
+            </p>
+          </div>
+          <a href="" class="cs-link"> Mehr Informationen</a>
+          <picture class="cs-picture">
+            <img
+              class="cs-image"
+              loading="lazy"
+              decoding="async"
+              src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/toothache.png"
+              alt="icon"
+              width="181"
+              height="102"
+            />
+          </picture>
+        </li>
+      </ul>
+    </div>
+    <div class="cs-card-container">
+      <picture class="cs-card-picture">
+        <source
+          media="(max-width: 600px)"
+          srcset="
+            https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dentist-patient.jpeg
+          "
+        />
+        <source
+          media="(min-width: 601px)"
+          srcset="
+            https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dentist-patient.jpeg
+          "
+        />
+        <img
+          loading="lazy"
+          decoding="async"
+          src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dentist-patient.jpeg"
+          alt="dentist and patient"
+          width="477"
+          height="478"
+          aria-hidden="true"
+        />
+      </picture>
+      <div class="cs-card-content">
+        <h2 class="cs-h2">
+          Termin vereinbaren für hochwertige zahnmedizinische Leistungen
+        </h2>
+        <p class="cs-card-text">
+          Von der Vorsorge bis zur wiederherstellenden Zahnmedizin ist unser
+          Team der bestmöglichen zahnmedizinischen Versorgung für Sie
+          verpflichtet.
+        </p>
+        <div class="cs-button-flex">
+          <a class="cs-button-solid" href="/">Termin vereinbaren</a>
+          <a class="cs-phone" href="">
+            <picture class="cs-card-pic">
+              <img
+                class="cs-card-icon"
+                aria-hidden="true"
+                src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/white-phone.svg"
+                decoding="async"
+                alt="icon"
+                width="20"
+                height="20"
+                loading="lazy"
+              />
+            </picture>
+            <div class="cs-phone-wrapper">
+              <span class="cs-phone-number">{{client.phoneFormatted}}</span>
+            </div>
+          </a>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    {% include 'components/cta.html' %}
-{% endblock %}
+<!-- ============================================ -->
+<!--                     Quote                    -->
+<!-- ============================================ -->
+
+<section id="quote-2012">
+  <div class="cs-container">
+    <div class="cs-review">
+      <span class="cs-topper">Single Quote</span>
+      <p class="cs-review-text">
+        Vom ersten Termin an fühlte ich mich bestens aufgehoben. Dr. Weber und
+        sein Team haben mir jeden Schritt genau erklärt und meine Ängste ernst
+        genommen.
+      </p>
+      <div class="cs-flex-group">
+        <span class="cs-name"> Michael Schmidt </span>
+        <span class="cs-job"> Zufriedener Patient seit 2022</span>
+      </div>
+    </div>
+    <ul class="cs-card-group">
+      <li class="cs-item">
+        <a class="cs-link">
+          <picture class="cs-picture">
+            <source
+              media="(max-width: 600px)"
+              srcset="
+                https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dentist6.jpg
+              "
+            />
+            <source
+              media="(min-width: 601px)"
+              srcset="
+                https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dentist6.jpg
+              "
+            />
+            <img
+              decoding="async"
+              src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dentist6.jpg"
+              alt="dental patient"
+              width="305"
+              height="550"
+              aria-hidden="true"
+            />
+          </picture>
+        </a>
+      </li>
+      <li class="cs-item">
+        <a class="cs-link">
+          <picture class="cs-picture">
+            <source
+              media="(max-width: 600px)"
+              srcset="
+                https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dentist7.jpeg
+              "
+            />
+            <source
+              media="(min-width: 601px)"
+              srcset="
+                https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dentist7.jpeg
+              "
+            />
+            <img
+              decoding="async"
+              src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dentist7.jpeg"
+              alt="dental patient"
+              width="305"
+              height="550"
+              aria-hidden="true"
+            />
+          </picture>
+          <!--On Hover Image-->
+          <img
+            class="cs-resize"
+            loading="lazy"
+            decoding="async"
+            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/white-resize.svg"
+            alt="resize"
+            width="60"
+            height="60"
+            aria-hidden="true"
+          />
+        </a>
+      </li>
+      <li class="cs-item">
+        <a class="cs-link">
+          <picture class="cs-picture">
+            <source
+              media="(max-width: 600px)"
+              srcset="
+                https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dentist8.jpeg
+              "
+            />
+            <source
+              media="(min-width: 601px)"
+              srcset="
+                https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dentist8.jpeg
+              "
+            />
+            <img
+              decoding="async"
+              src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dentist8.jpeg"
+              alt="dental patient"
+              width="305"
+              height="550"
+              aria-hidden="true"
+            />
+          </picture>
+          <!--On Hover Image-->
+          <img
+            class="cs-resize"
+            loading="lazy"
+            decoding="async"
+            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/white-resize.svg"
+            alt="resize"
+            width="60"
+            height="60"
+            aria-hidden="true"
+          />
+        </a>
+      </li>
+      <li class="cs-item">
+        <a class="cs-link">
+          <picture class="cs-picture">
+            <source
+              media="(max-width: 600px)"
+              srcset="
+                https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dentist9.jpeg
+              "
+            />
+            <source
+              media="(min-width: 601px)"
+              srcset="
+                https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dentist9.jpeg
+              "
+            />
+            <img
+              decoding="async"
+              src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dentist9.jpeg"
+              alt="dental patient"
+              width="305"
+              height="550"
+              aria-hidden="true"
+            />
+          </picture>
+          <!--On Hover Image-->
+          <img
+            class="cs-resize"
+            loading="lazy"
+            decoding="async"
+            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/white-resize.svg"
+            alt="resize"
+            width="60"
+            height="60"
+            aria-hidden="true"
+          />
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!--                   Steps                      -->
+<!-- ============================================ -->
+
+<section id="steps-2014">
+  <div class="cs-container">
+    <div class="cs-content">
+      <span class="cs-topper">So gehts</span>
+      <h2 class="cs-title">Ein Zahnarzt für die ganze Familie</h2>
+      <p class="cs-text">
+        Wir bieten erstklassige Zahnmedizin für Ihre gesamte Familie. Von der
+        Vorsorge bis zur Behandlung sorgen wir dafür, dass jedes
+        Familienmitglied die beste zahnmedizinische Versorgung erhält.
+      </p>
+      <a class="cs-button-solid" href="">Termin vereinbaren</a>
+    </div>
+    <ul class="cs-card-group">
+      <li class="cs-item">
+        <h3 class="cs-h3">Book Appointment</h3>
+        <p class="cs-item-text">
+          Mengeler bietet erstklassigen Service und wurde mehrfach
+          ausgezeichnet. Unsere Mission ist es, jedem zu einem selbstbewussten
+          Lächeln zu verhelfen.
+        </p>
+        <div class="cs-number-wrapper">
+          <span class="cs-number">01</span>
+        </div>
+        <picture class="cs-picture">
+          <!--Mobile Image-->
+          <source
+            media="(max-width: 600px)"
+            srcset="
+              https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/calendar.jpg
+            "
+          />
+          <!--Tablet and above Image-->
+          <source
+            media="(min-width: 601px)"
+            srcset="
+              https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/calendar.jpg
+            "
+          />
+          <img
+            loading="lazy"
+            decoding="async"
+            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/calendar.jpg"
+            alt="number"
+            width="48"
+            height="48"
+          />
+        </picture>
+      </li>
+      <li class="cs-item">
+        <h3 class="cs-h3">Arztbesuch</h3>
+        <p class="cs-item-text">
+          Wir bieten erstklassigen Service und wurde mehrfach ausgezeichnet.
+          Unsere Mission ist es, jedem zu einem selbstbewussten Lächeln zu
+          verhelfen.
+        </p>
+        <div class="cs-number-wrapper">
+          <span class="cs-number">02</span>
+        </div>
+        <picture class="cs-picture">
+          <!--Mobile Image-->
+          <source
+            media="(max-width: 600px)"
+            srcset="
+              https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dentist10.jpeg
+            "
+          />
+          <!--Tablet and above Image-->
+          <source
+            media="(min-width: 601px)"
+            srcset="
+              https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dentist10.jpeg
+            "
+          />
+          <img
+            loading="lazy"
+            decoding="async"
+            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dentist10.jpeg"
+            alt="number"
+            width="48"
+            height="48"
+          />
+        </picture>
+      </li>
+      <li class="cs-item">
+        <h3 class="cs-h3">Empfohlene Medikamente</h3>
+        <p class="cs-item-text">
+          Wir bieten erstklassigen Service und wurde mehrfach ausgezeichnet.
+          Unsere Mission ist es, jedem zu einem selbstbewussten Lächeln zu
+          verhelfen.
+        </p>
+        <div class="cs-number-wrapper">
+          <span class="cs-number">03</span>
+        </div>
+        <picture class="cs-picture">
+          <!--Mobile Image-->
+          <source
+            media="(max-width: 600px)"
+            srcset="
+              https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/invisalign.jpg
+            "
+          />
+          <!--Tablet and above Image-->
+          <source
+            media="(min-width: 601px)"
+            srcset="
+              https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/invisalign.jpg
+            "
+          />
+          <img
+            loading="lazy"
+            decoding="async"
+            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/invisalign.jpg"
+            alt="number"
+            width="48"
+            height="48"
+          />
+        </picture>
+      </li>
+    </ul>
+  </div>
+</section>
+<!-- ============================================ -->
+<!--                  Testimonials                -->
+<!-- ============================================ -->
+
+<section id="testimonials-2060">
+  <div class="cs-container">
+    <ul class="cs-card-group">
+      <li class="cs-content">
+        <span class="cs-topper">REFERENZEN</span>
+        <h2 class="cs-title">Was unsere Patienten sagen</h2>
+        <p class="cs-text">
+          Entdecken Sie die Erfahrungen unserer zufriedenen Patienten.
+          Authentische Berichte, die von unserer Qualität und unserem Engagement
+          für Ihre Zahngesundheit zeugen.
+        </p>
+      </li>
+      <li class="cs-item cs-item-green">
+        <img
+          class="cs-stars"
+          loading="lazy"
+          decoding="async"
+          src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/green-stars.png"
+          alt="stars"
+          width="120"
+          height="24"
+          aria-hidden="true"
+        />
+        <h3 class="cs-h3">99,99% Patientenzufriedenheit</h3>
+        <p class="cs-green-text">
+          Basierend auf über 750 Bewertungen von 6.154 abgeschlossenen
+          Behandlungen
+        </p>
+        <img
+          class="cs-graphic"
+          src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dentitch-joined-graphic.svg"
+          alt="drops"
+          width="528"
+          height="830"
+          aria-hidden="true"
+          decoding="async"
+        />
+      </li>
+      <li class="cs-item cs-item-picture">
+        <picture class="cs-picture">
+          <source
+            media="(max-width: 600px)"
+            srcset="
+              https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dental-testimonial-1.png
+            "
+          />
+          <source
+            media="(min-width: 601px)"
+            srcset="
+              https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dental-testimonial-1.png
+            "
+          />
+          <img
+            loading="lazy"
+            decoding="async"
+            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dental-testimonial-1.png"
+            alt="body builder"
+            width="630"
+            height="877"
+          />
+        </picture>
+      </li>
+      <li class="cs-item">
+        <img
+          class="cs-stars"
+          loading="lazy"
+          decoding="async"
+          src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png"
+          alt="stars"
+          width="120"
+          height="24"
+          aria-hidden="true"
+        />
+        <h3 class="cs-h3">Peter Müller</h3>
+        <span class="cs-job">Geschäftsführer</span>
+        <p class="cs-quote">
+          "Von der professionellen Zahnreinigung bis hin zu aufwändigen
+          Behandlungen - das kompetente Team hat mich durch seine Expertise und
+          das einfühlsame Vorgehen überzeugt."
+        </p>
+      </li>
+      <li class="cs-item cs-item-picture">
+        <picture class="cs-picture">
+          <source
+            media="(max-width: 600px)"
+            srcset="
+              https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dental-testimonial-2.png
+            "
+          />
+          <source
+            media="(min-width: 601px)"
+            srcset="
+              https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dental-testimonial-2.png
+            "
+          />
+          <img
+            loading="lazy"
+            decoding="async"
+            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dental-testimonial-2.png"
+            alt="body builder"
+            width="630"
+            height="877"
+          />
+        </picture>
+      </li>
+      <li class="cs-item">
+        <img
+          class="cs-stars"
+          loading="lazy"
+          decoding="async"
+          src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png"
+          alt="stars"
+          width="120"
+          height="24"
+          aria-hidden="true"
+        />
+        <h3 class="cs-h3">Lisa Weber</h3>
+        <span class="cs-job">Lehrerin</span>
+        <p class="cs-quote">
+          "Die moderne Praxis und das freundliche Personal haben mir meine
+          Zahnarztangst genommen. Endlich kann ich wieder unbeschwert lächeln."
+        </p>
+      </li>
+      <li class="cs-item cs-item-picture">
+        <picture class="cs-picture">
+          <source
+            media="(max-width: 600px)"
+            srcset="
+              https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dental-testimonial-3.png
+            "
+          />
+          <source
+            media="(min-width: 601px)"
+            srcset="
+              https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dental-testimonial-3.png
+            "
+          />
+          <img
+            loading="lazy"
+            decoding="async"
+            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dental-testimonial-3.png"
+            alt="body builder"
+            width="630"
+            height="877"
+          />
+        </picture>
+      </li>
+      <li class="cs-item">
+        <img
+          class="cs-stars"
+          loading="lazy"
+          decoding="async"
+          src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png"
+          alt="stars"
+          width="120"
+          height="24"
+          aria-hidden="true"
+        />
+        <h3 class="cs-h3">Alicia Fernandez</h3>
+        <span class="cs-job">Krankenpflegerin</span>
+        <p class="cs-quote">
+          "Besonders beeindruckt hat mich die ausführliche Beratung und die
+          transparente Kommunikation. Hier fühlt man sich als Patientin wirklich
+          gut aufgehoben."
+        </p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+{% include 'components/cta.html' %} {% endblock %}

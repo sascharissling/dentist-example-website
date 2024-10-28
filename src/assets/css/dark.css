@@ -5,27 +5,27 @@
 /* Mobile */
 @media only screen and (min-width: 0rem) {
   :root {
-    --dark: #082032;
+    --dark: #061623;
     --medium: #2c394b;
     --accent: #334756;
   }
-  body.dark-mode {
+  body {
     background-color: var(--dark);
   }
-  body.dark-mode p,
-  body.dark-mode li,
-  body.dark-mode h1,
-  body.dark-mode h2,
-  body.dark-mode h3,
-  body.dark-mode h4,
-  body.dark-mode h5,
-  body.dark-mode h6 {
+  body p,
+  body li,
+  body h1,
+  body h2,
+  body h3,
+  body h4,
+  body h5,
+  body h6 {
     color: #fff;
   }
-  body.dark-mode .light {
+  body .light {
     display: none;
   }
-  body.dark-mode .dark {
+  body .dark {
     display: block !important;
   }
   .dark {
