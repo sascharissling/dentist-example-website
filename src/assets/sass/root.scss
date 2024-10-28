@@ -342,7 +342,7 @@
       left: 50%;
       transform: translateX(-50%);
       border-radius: 2px;
-      background-color: #1a1a1a;
+      background-color: var(--primary);
       height: 2px;
       width: 100%;
     }
@@ -395,7 +395,7 @@
       transition:
         transform 0.4s,
         opacity 0.3s;
-      box-shadow: inset rgba(0, 0, 0, 0.2) 0px 8px 24px;
+      //box-shadow: inset rgba(0, 0, 0, 0.2) 0px 8px 24px;
       transform-origin: top right;
     }
 
@@ -745,7 +745,6 @@
     .cs-line {
       width: 100%;
       height: 2px;
-      background-color: #fafbfc;
       border-radius: 2px;
       position: absolute;
       left: 50%;
