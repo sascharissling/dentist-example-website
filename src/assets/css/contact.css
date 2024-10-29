@@ -1,20 +1,133 @@
 /* PAGE-SPECIFIC STYLES FOR THE CONTACT PAGE */
 /*-- -------------------------- -->
+<---          Banner            -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #banner-1519 {
+    padding: var(--sectionPadding);
+    /* 190px - 268px */
+    padding-top: clamp(11.875rem, 25vw, 16.75rem);
+    /* 100px - 150px */
+    padding-bottom: clamp(6.25rem, 12vw, 9.375rem);
+    /* clips the line from causing overflow issues for going off screen */
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+  #banner-1519 .cs-container {
+    text-align: center;
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* 8px - 12px */
+    gap: clamp(0.5rem, 1vw, 0.75rem);
+  }
+  #banner-1519 .cs-int-title {
+    /* 39px - 61px */
+    font-size: clamp(2.4375rem, 6.4vw, 3.8125rem);
+    font-weight: 900;
+    line-height: 1.2em;
+    text-align: center;
+    margin: 0;
+    color: var(--bodyTextColorWhite);
+    position: relative;
+  }
+  #banner-1519 .cs-breadcrumbs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #banner-1519 .cs-link {
+    font-size: 1rem;
+    line-height: 1.2em;
+    text-decoration: none;
+    color: var(--bodyTextColor);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #banner-1519 .cs-link:last-of-type {
+    /* remove the chevron on the last list item */
+  }
+  #banner-1519 .cs-link:last-of-type::after {
+    display: none;
+  }
+  #banner-1519 .cs-link:after {
+    /* chevron */
+    content: "";
+    width: 0.4375rem;
+    height: 0.75rem;
+    margin: 0 1rem;
+    background: url("https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/grey-chevron.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: block;
+  }
+  #banner-1519 .cs-link.cs-active {
+    color: var(--primary);
+  }
+  #banner-1519 .cs-background {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  #banner-1519 .cs-background:before {
+    /* gradient overlay */
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #fff3ec;
+    opacity: 0.8;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  #banner-1519 .cs-mask {
+    --maskBG: #ffffff;
+    width: 100%;
+    height: auto;
+    display: block;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    z-index: 100;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #banner-1519 .cs-background:before {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 243, 236, 0.9) 23.05%, rgba(255, 243, 236, 0) 80.08%);
+    opacity: 1;
+  }
+  #banner-1519 .cs-mask {
+    --maskBG: var(--dark);
+  }
+}
+/*-- -------------------------- -->
 <---          Contact           -->
 <--- -------------------------- -*/
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-  :root {
-    /* 13px - 16px */
-    --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
-    /* 31px - 49px */
-    --headerFontSize: clamp(1.9375rem, 4.5vw, 3.0625rem);
-    --bodyFontSize: 1rem;
-    /* 60px - 100px top and bottom */
-    --sectionPadding: clamp(3.75em, 7.82vw, 6.25em) 1rem;
-  }
   #cs-contact {
     padding: var(--sectionPadding);
+    background: var(--bodyTextColorWhite);
   }
   #cs-contact .cs-container {
     margin: auto;
@@ -57,12 +170,9 @@
     font-weight: 700;
     color: var(--headerColor);
   }
-  #cs-contact #cs-form .cs-label-message {
-    /* 32px - 48px */
-    margin-bottom: clamp(2rem, 6.3vw, 3rem);
-  }
   #cs-contact #cs-form input,
-  #cs-contact #cs-form textarea {
+  #cs-contact #cs-form textarea,
+  #cs-contact #cs-form select {
     border: 1px solid #b4b2c7;
     border-radius: 0.5rem;
     margin-top: 0.25rem;
@@ -75,7 +185,8 @@
     transition: border 0.3s;
   }
   #cs-contact #cs-form input:hover,
-  #cs-contact #cs-form textarea:hover {
+  #cs-contact #cs-form textarea:hover,
+  #cs-contact #cs-form select:hover {
     border: 1px solid var(--primary);
   }
   #cs-contact #cs-form textarea {
@@ -85,21 +196,22 @@
   }
   #cs-contact #cs-form .cs-button-solid {
     border: none;
-    width: 100%;
+    color: var(--bodyTextColorWhite);
   }
   #cs-contact .cs-right-section {
+    z-index: 1;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
     border-radius: 0.5rem;
-    height: 20rem;
     /* cuts off corners on img tag */
     overflow: hidden;
     /* 24px - 40px top & bottom */
     /* 20px - 40px left & right */
     padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1.25rem, 3vw, 2.5rem);
+    height: 30rem;
   }
   #cs-contact .cs-header {
     display: block;
@@ -207,12 +319,10 @@
     width: 100%;
   }
   #cs-contact .cs-right-section {
-    /* changes to 578px at 1300px wide */
-    height: 42.875rem;
-    max-width: 33.875rem;
     width: 40%;
     /* prevents flexbox from squishing it */
     flex: none;
+    height: 56.5rem;
   }
   #cs-contact .cs-right-section:hover .cs-bg-picture {
     transform: scale(1.1);
@@ -228,40 +338,29 @@
     column-gap: 0rem;
   }
   #cs-contact #cs-form label {
-    max-width: 19.0625rem;
     width: 48%;
   }
   #cs-contact #cs-form .cs-label-message {
     max-width: 100%;
   }
+  #cs-contact #cs-form .cs-label-checkbox {
+    margin-bottom: 1rem;
+    font-weight: bold;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: flex-start;
+  }
+  #cs-contact #cs-form .cs-label-checkbox input {
+    width: 1.5rem;
+    height: 1.5rem;
+    accent-color: var(--primary);
+  }
   #cs-contact .cs-right-section {
-    height: 36.125rem;
-  }
-}
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-  body.dark-mode #cs-contact .cs-text,
-  body.dark-mode #cs-contact .cs-title {
-    color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode #cs-contact #cs-form label,
-  body.dark-mode #cs-contact #cs-form input,
-  body.dark-mode #cs-contact #cs-form textarea {
-    background-color: transparent;
-    color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode #cs-contact #cs-form label::placeholder,
-  body.dark-mode #cs-contact #cs-form input::placeholder,
-  body.dark-mode #cs-contact #cs-form textarea::placeholder {
-    /* lighten up the color of the text by 40%*/
-    filter: brightness(1.4);
-  }
-  body.dark-mode #cs-contact .cs-bg-picture {
-    background-color: #000;
-  }
-  body.dark-mode #cs-contact .cs-bg-picture img {
-    /* lets parent background-color bleed through and darken it */
-    opacity: 0.5;
+    height: 43.5rem;
   }
 }
 

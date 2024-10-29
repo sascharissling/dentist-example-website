@@ -46,3 +46,22 @@ for (const item of dropDowns) {
   };
   item.addEventListener("click", onClick);
 }
+
+function setActiveLink() {
+  const currentPagePath = window.location.pathname.replace(/\/$/, "");
+  const navLinks = document.querySelectorAll(".cs-li-link");
+
+  navLinks.forEach((link) => {
+    const linkPath = link.getAttribute("href").replace(/\/$/, "");
+
+    // Remove active class from all links
+    link.classList.remove("cs-active");
+
+    // Check if link's href matches current page path
+    if (linkPath === currentPagePath) {
+      link.classList.add("cs-active");
+    }
+  });
+}
+
+setActiveLink();

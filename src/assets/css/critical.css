@@ -16,7 +16,7 @@
   }
   #hero-1950 .cs-container {
     width: 100%;
-    max-width: 85.5625rem;
+    max-width: 90rem;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -33,21 +33,33 @@
     flex-direction: column;
     /* centers content horizontally, set to flex-start to left align */
     align-items: flex-start;
-    background: var(--bodyTextColorWhite);
     border-radius: 1rem;
     padding: 2rem;
+  }
+  #hero-1950 .cs-content:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.48;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    pointer-events: none;
   }
   #hero-1950 .cs-title {
     /* 39px - 61px */
     font-size: clamp(1.75rem, 5vw, 3.5rem);
     margin-bottom: 1.75rem;
-    color: var(--bodyTextColor);
+    color: var(--bodyTextColorWhite);
   }
   #hero-1950 .cs-text {
     /* 16px - 20px */
     font-size: clamp(1rem, 2vw, 1.25rem);
     margin-bottom: 1.25rem;
-    color: var(--bodyTextColor);
+    color: var(--bodyTextColorWhite);
     opacity: 0.8;
   }
   #hero-1950 .cs-flex-group {
@@ -117,6 +129,10 @@
 }
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
+  #hero-1950 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
   #hero-1950 .cs-content {
     text-align: left;
     flex-direction: row;
@@ -124,7 +140,10 @@
     align-items: flex-start;
     gap: 2rem;
     background: var(--bodyTextColorWhite);
-    padding: 2rem;
+    color: var(--bodyTextColor);
+  }
+  #hero-1950 .cs-content:before {
+    content: none;
   }
   #hero-1950 .cs-title {
     width: 55%;
@@ -144,9 +163,9 @@
 /* Large Desktop Parallax Effect - 100px */
 @media only screen and (min-width: 100rem) {
   #hero-1950 .cs-background {
-    background: url("/assets/images/dentist-hero.jpg");
-    background-position: center;
+    background: url("/assets/images/hero-image.jpg");
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     /* creates the parallax effect */
     background-attachment: fixed;

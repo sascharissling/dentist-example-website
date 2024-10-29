@@ -30,7 +30,6 @@
     /* centers content horizontally, set to flex-start to left align */
     align-items: center;
   }
-
   #faq-2066 .cs-flex-group {
     width: 100%;
     overflow: hidden;
@@ -64,6 +63,7 @@
     position: relative;
     z-index: 1;
     transition: border-color 0.3s;
+    font-family: inherit;
   }
   #faq-2066 .cs-option:before {
     /* background color */
@@ -107,12 +107,7 @@
     gap: 0.5rem;
     transform-style: preserve-3d;
     perspective: 900px;
-    transition:
-      transform 0.7s,
-      opacity 0.3s,
-      visibility 0.5s,
-      top 0.3s,
-      left 0.3s;
+    transition: transform 0.7s, opacity 0.3s, visibility 0.5s, top 0.3s, left 0.3s;
     /* makes the transfrom scaling orgin the top left corner, dictates the direction by which the scale transforms animate towards */
     transform-origin: top;
   }
@@ -143,9 +138,7 @@
     border-bottom: 1px solid #e8e8e8;
     top: 0;
     transform: rotateX(0deg);
-    transition:
-      transform 0.6s,
-      opacity 0.3s;
+    transition: transform 0.6s, opacity 0.3s;
   }
   #faq-2066 .cs-faq-item:nth-of-type(2) {
     transition-delay: 0.1s;
@@ -208,9 +201,7 @@
     border: none;
     display: block;
     position: relative;
-    transition:
-      background-color 0.3s,
-      color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
   }
   #faq-2066 .cs-button:hover {
     cursor: pointer;
@@ -265,9 +256,7 @@
     overflow: hidden;
     color: var(--bodyTextColor);
     opacity: 0;
-    transition:
-      opacity 0.3s,
-      padding-bottom 0.3s;
+    transition: opacity 0.3s, padding-bottom 0.3s;
   }
   #faq-2066 .cs-cta {
     text-align: center;
@@ -422,11 +411,6 @@
     position: relative;
     z-index: 1;
   }
-  #sbsr-1983 .cs-title,
-  #sbsr-1983 .cs-text,
-  #sbsr-1983 .cs-ul {
-    color: var(--bodyTextColorWhite);
-  }
   #sbsr-1983 .cs-content {
     /* set text align to left if content needs to be left aligned */
     text-align: left;
@@ -451,7 +435,7 @@
     line-height: 1.5em;
     list-style: none;
     margin: 0;
-    color: var(--bodyTextColorWhite);
+    color: var(--bodyTextColor);
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -688,11 +672,7 @@
   #banner-1519 .cs-background:before {
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-      90deg,
-      rgba(255, 243, 236, 0.9) 23.05%,
-      rgba(255, 243, 236, 0) 80.08%
-    );
+    background: linear-gradient(90deg, rgba(255, 243, 236, 0.9) 23.05%, rgba(255, 243, 236, 0) 80.08%);
     opacity: 1;
   }
   #banner-1519 .cs-mask {
