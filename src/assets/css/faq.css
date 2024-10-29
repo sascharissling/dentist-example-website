@@ -322,7 +322,7 @@
   }
   #faq-2066 .cs-button-solid:before {
     content: "";
-    width: 0%;
+    width: 0;
     height: 100%;
     background: #000;
     opacity: 1;
@@ -472,7 +472,7 @@
   }
   #sbsr-1983 .cs-button-solid:before {
     content: "";
-    width: 0%;
+    width: 0;
     height: 100%;
     background: #1a1a1a;
     opacity: 1;

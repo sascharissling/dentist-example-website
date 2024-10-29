@@ -410,7 +410,7 @@
     display: block;
     background: rgba(0, 0, 0, 0.6);
     height: 100vh;
-    width: 0%;
+    width: 0;
     transition: width 0.5s, opacity 0.3s;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
@@ -922,7 +922,7 @@
   }
   #cs-navigation .cs-button-solid:before {
     content: "";
-    width: 0%;
+    width: 0;
     height: 100%;
     background: #fff;
     opacity: 1;
@@ -1333,7 +1333,7 @@
     display: block;
     background: var(--primary);
     height: 0.125rem;
-    width: 0%;
+    width: 0;
     transition: width 0.3s;
   }
   #footer .right-section .lists ul li a:hover:before {

@@ -270,7 +270,7 @@
   }
   #services-1977 .cs-button-solid:before {
     content: "";
-    width: 0%;
+    width: 0;
     height: 100%;
     background: #000;
     opacity: 1;
@@ -552,7 +552,7 @@
   }
   #steps-2014 .cs-button-solid:before {
     content: "";
-    width: 0%;
+    width: 0;
     height: 100%;
     background: #000;
     opacity: 1;
