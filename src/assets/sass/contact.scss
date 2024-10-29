@@ -159,6 +159,7 @@
       /* changes to 1280px at desktop */
       max-width: 50rem;
       width: 100%;
+      margin-bottom: 2rem;
     }
 
     .cs-content {
@@ -180,8 +181,6 @@
       margin: 0 auto 0 0;
       /* 40px - 48px */
       margin-bottom: clamp(2.5rem, 6.3vw, 3rem);
-      /* 404px - 522px */
-      max-width: clamp(25.25rem, 30vw, 32.625rem);
       text-align: left;
     }
 
@@ -216,6 +215,24 @@
 
         &:hover {
           border: 1px solid var(--primary);
+        }
+      }
+
+      .cs-label-checkbox {
+        margin-bottom: 1rem;
+        font-weight: bold;
+        font-size: 0.875rem;
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+        width: 100%;
+        justify-content: flex-start;
+        line-height: 1.5rem;
+
+        input {
+          width: 1rem;
+          height: 1rem;
+          accent-color: var(--primary);
         }
       }
 
@@ -307,6 +324,7 @@
       height: 100%;
       width: 100%;
       transition: transform 0.6s;
+      border-radius: var(--borderRadius);
 
       img {
         position: absolute;
@@ -338,8 +356,8 @@
   }
 }
 
-/* Tablet - 700px */
-@media only screen and (min-width: 43.75em) {
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
   #cs-contact {
     #cs-form {
       display: flex;
@@ -365,12 +383,11 @@
       display: flex;
       justify-content: flex-end;
       align-items: flex-start;
-      max-width: calc(1280 / 16 * 1rem);
+      max-width: 90rem;
       gap: calc(80 / 16 * 1rem);
     }
 
     #cs-form {
-      max-width: calc(630 / 16 * 1rem);
       label {
         width: 100%;
       }
@@ -408,26 +425,74 @@
       .cs-label-message {
         max-width: 100%;
       }
-      .cs-label-checkbox {
-        margin-bottom: 1rem;
-        font-weight: bold;
-        font-size: 0.875rem;
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        gap: 0.5rem;
-        width: 100%;
-        justify-content: flex-start;
-
-        input {
-          width: 1.5rem;
-          height: 1.5rem;
-          accent-color: var(--primary);
-        }
-      }
     }
     .cs-right-section {
       height: 43.5rem;
     }
+  }
+}
+
+/*-- -------------------------- -->
+<---            Map             -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #map-720 {
+    min-height: calc(540 / 16 * 1rem);
+    padding: var(--sectionPadding);
+    /* prevents padding and border from affecting height and width */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 50rem;
+    margin: auto;
+
+    img {
+      position: absolute;
+      z-index: 3;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      /* Makes img tag act as a background image */
+      object-fit: cover;
+      border-radius: var(--borderRadius);
+    }
+
+    .cs-icon {
+      width: 5rem;
+      height: 5rem;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .cs-background {
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+  }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #map-720 {
+    max-width: 50rem;
+    padding-left: 2rem;
+  }
+}
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #map-720 {
+    max-width: 90rem;
   }
 }
