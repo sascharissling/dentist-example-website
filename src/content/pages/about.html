@@ -1,76 +1,464 @@
 ---
-title: 'About | Code Stitch Web Designs'
-description: 'Meta description for the page'
-preloadImg: '/assets/images/cabinets2.jpg'
-permalink: 'about/'
+title: "Über Uns | Mengeler Dentalklinik"
+description: "Über die Zahnarztpraxis im Kölner Süden"
+permalink: "about/"
 eleventyNavigation:
-    key: About Us
-    order: 200
+  key: About Us
+  order: 200
 ---
 
-{% extends "layouts/base.html" %}
+{% extends "layouts/base.html" %} {% block head %}
+<link rel="stylesheet" href="/assets/css/about.css" />
+{% endblock %} {% block body %}
+<!-- ============================================ -->
+<!--                   Banner                     -->
+<!-- ============================================ -->
 
-{% block head %}
-    <link rel="stylesheet" href="/assets/css/about.css">
-{% endblock %}
+<div id="banner-1519">
+  <div class="cs-container">
+    <h1 class="cs-int-title">Über uns</h1>
+  </div>
+  <svg
+    class="cs-mask"
+    xmlns="http://www.w3.org/2000/svg"
+    width="1920"
+    height="136"
+    viewBox="0 0 1920 136"
+    fill="none"
+  >
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M1920 136V0C1803.21 45.3334 1445.52 136 951 136C456.485 136 111.116 45.3334 0 0V136H951H1920Z"
+      fill="var(--maskBG)"
+    />
+  </svg>
+</div>
 
-{% block body %}
-    <!-- ============================================ -->
-    <!--                    LANDING                   -->
-    <!-- ============================================ -->
+<!-- ============================================ -->
+<!--                Meet the Team                 -->
+<!-- ============================================ -->
 
-    <section id="int-hero">
-        <h1 id="home-h">About Us</h1>
-        <picture>
-            <source media="(max-width: 600px)" srcset="/assets/images/cabinets2-m.jpg">
-            <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg">
-            <img aria-hidden="true" decoding="async" src="/assets/images/cabinets2.jpg" alt="kitchen cabinets" loading="eager" width="2500" height="1667">
+<section id="meet-team-2080">
+  <div class="cs-container">
+    <!--Gallery-->
+    <ul class="cs-card-group">
+      <li class="cs-content">
+        <span class="cs-topper">Unser Team</span>
+        <h2 class="cs-title">Wir stellen uns vor</h2>
+        <p class="cs-text">
+          Seit über 20 Jahren sind wir Ihr vertrauensvoller Partner für
+          hochwertige Zahnmedizin in Köln-Rodenkirchen. In unseren hellen
+          Praxisräumen empfängt Sie unser erfahrenes Team mit persönlicher
+          Betreuung und modernster zahnmedizinischer Versorgung.
+        </p>
+      </li>
+      <!--Picture 1-->
+      <li class="cs-item">
+        <picture class="cs-picture">
+          <source
+            media="(max-width: 600px)"
+            srcset="
+              https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/d1.jpg
+            "
+          />
+          <source
+            media="(min-width: 601px)"
+            srcset="
+              https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/d1.jpg
+            "
+          />
+          <img
+            loading="lazy"
+            decoding="async"
+            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/d1.jpg"
+            alt="team member"
+            width="305"
+            height="400"
+          />
         </picture>
-
-    </section>
-
-    <!-- ============================================ -->
-    <!--                 Side By Side                 -->
-    <!-- ============================================ -->
-
-    <section id="sbs">
-        <div class="cs-container">
-            <!-- Left Image Section -->
-            <div class="cs-left">
-                <picture class="cs-picture cs-picture1">
-                    <source media="(max-width: 600px)" srcset="/assets/images/cabinets2-m.jpg">
-                    <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg">
-                    <img aria-hidden="true" decoding="async" src="/assets/images/cabinets2.jpg" alt="cabinets" loading="lazy" width="400" height="563">
-                </picture>
-                <picture class="cs-picture cs-picture2">
-                    <source media="(max-width: 600px)" srcset="/assets/images/construction-m.jpg">
-                    <source media="(min-width: 601px)" srcset="/assets/images/construction.jpg">
-                    <img aria-hidden="true" decoding="async" src="/assets/images/construction.jpg" alt="house" loading="lazy" width="400" height="563">
-                </picture>
-            </div>
-            <!-- Right Content Section-->
-            <div class="cs-right">
-                <span class="cs-topper">About Us</span>
-                <h2 class="cs-title">About Company Title</h2>
-                <p class="cs-text">
-                    In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per.
-                </p>
-                <p class="cs-text">
-                    In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per.
-                </p>
-                <div class="cs-flex-group">
-                    <p class="cs-flex-p">
-                        In consequat tincidunt turpis sit amet imperdiet. Praesent Classei consequat tincidunt turpis sit amet imperdiet for mind.
-                    </p>
-                    <span class="cs-name">Justin Time</span>
-                    <span class="cs-job">CEO-Founder</span>
-                    <img class="cs-quote-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/quote-white.svg" alt="gavel" width="136" height="77">
-                </div>
-                <a href="/projects" class="cs-button-solid">Our Projects</a>
-            </div>
+        <div class="cs-info">
+          <h3 class="cs-h3">Dr. Eleanor Pena</h3>
+          <span class="cs-job">Dental Surgeon</span>
         </div>
-    </section>
+      </li>
+      <!--Picture 2-->
+      <li class="cs-item">
+        <picture class="cs-picture">
+          <source
+            media="(max-width: 600px)"
+            srcset="
+              https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/d2.jpeg
+            "
+          />
+          <source
+            media="(min-width: 601px)"
+            srcset="
+              https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/d2.jpeg
+            "
+          />
+          <img
+            loading="lazy"
+            decoding="async"
+            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/d2.jpeg"
+            alt="team member"
+            width="305"
+            height="400"
+          />
+        </picture>
+        <div class="cs-info">
+          <h3 class="cs-h3">Dr. Albert Flores</h3>
+          <span class="cs-job">Dental Surgeon</span>
+        </div>
+      </li>
+      <!--Picture 3-->
+      <li class="cs-item">
+        <picture class="cs-picture">
+          <source
+            media="(max-width: 600px)"
+            srcset="
+              https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/d3.jpg
+            "
+          />
+          <source
+            media="(min-width: 601px)"
+            srcset="
+              https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/d3.jpg
+            "
+          />
+          <img
+            loading="lazy"
+            decoding="async"
+            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/d3.jpg"
+            alt="team member"
+            width="305"
+            height="400"
+          />
+        </picture>
+        <div class="cs-info">
+          <h3 class="cs-h3">Dr. Dianne Russell</h3>
+          <span class="cs-job">Dental Surgeon</span>
+        </div>
+      </li>
+      <!--Picture 4-->
+      <li class="cs-item">
+        <picture class="cs-picture">
+          <source
+            media="(max-width: 600px)"
+            srcset="
+              https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/d4.jpg
+            "
+          />
+          <source
+            media="(min-width: 601px)"
+            srcset="
+              https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/d4.jpg
+            "
+          />
+          <img
+            loading="lazy"
+            decoding="async"
+            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/d4.jpg"
+            alt="team member"
+            width="305"
+            height="400"
+          />
+        </picture>
+        <div class="cs-info">
+          <h3 class="cs-h3">Dr. Ronald Richards</h3>
+          <span class="cs-job">Dental Surgeon</span>
+        </div>
+      </li>
+      <!--Picture 5-->
+      <li class="cs-item">
+        <picture class="cs-picture">
+          <source
+            media="(max-width: 600px)"
+            srcset="
+              https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/d5.jpg
+            "
+          />
+          <source
+            media="(min-width: 601px)"
+            srcset="
+              https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/d5.jpg
+            "
+          />
+          <img
+            loading="lazy"
+            decoding="async"
+            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/d5.jpg"
+            alt="team member"
+            width="305"
+            height="400"
+          />
+        </picture>
+        <div class="cs-info">
+          <h3 class="cs-h3">Dr. Darlene Robertson</h3>
+          <span class="cs-job">Dental Surgeon</span>
+        </div>
+      </li>
+      <!--Picture 6-->
+      <li class="cs-item">
+        <picture class="cs-picture">
+          <source
+            media="(max-width: 600px)"
+            srcset="
+              https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/d6.jpeg
+            "
+          />
+          <source
+            media="(min-width: 601px)"
+            srcset="
+              https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/d6.jpeg
+            "
+          />
+          <img
+            loading="lazy"
+            decoding="async"
+            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/d6.jpeg"
+            alt="team member"
+            width="305"
+            height="400"
+          />
+        </picture>
+        <div class="cs-info">
+          <h3 class="cs-h3">Dr. Savannah Nguyen</h3>
+          <span class="cs-job">Dental Surgeon</span>
+        </div>
+      </li>
+      <li class="cs-cta">
+        <div class="cs-wrapper">
+          <h2 class="cs-h2">Kommen Sie in unser Team</h2>
+          <span class="cs-text"
+            >Wir freuen uns auf Ihre Bewerbung. Weiter unten sehen Sie unsere
+            offenen Stellen.</span
+          >
+        </div>
+        <a href="#careers-2065" class="cs-button-solid">Jobs</a>
+      </li>
+    </ul>
+  </div>
+</section>
 
-    {% include 'components/cta.html' %}
+<!-- ============================================ -->
+<!--                     Hero                     -->
+<!-- ============================================ -->
+
+<section id="hero-1969">
+  <div class="cs-container">
+    <div class="cs-content">
+      <h2 class="cs-title">
+        Innovative Technologie und professionelle Zahnmedizin
+      </h2>
+      <div class="cs-flex">
+        <p class="cs-text">
+          In unserer Praxis haben wir uns der bestmöglichen zahnmedizinischen
+          Versorgung unserer Patienten verschrieben. Unser erfahrenes Team von
+          Zahnmedizinern arbeitet mit modernster Technologie und
+          fortschrittlichen Behandlungsmethoden, um jedem Patienten eine
+          individuelle und wirksame Behandlung zu garantieren.
+        </p>
+      </div>
+    </div>
+    <div class="cs-wrapper">
+      <picture class="cs-picture">
+        <source
+          media="(min-width: 601px)"
+          srcset="
+            https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dentist.jpeg
+          "
+        />
+        <source
+          media="(max-width: 600px)"
+          srcset="
+            https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dentist.jpeg
+          "
+        />
+        <img
+          decoding="async"
+          src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dentist.jpeg"
+          alt="dentist"
+          width="1880"
+          height="683"
+        />
+      </picture>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!--                   Careers                    -->
+<!-- ============================================ -->
+
+<section id="careers-2065">
+  <div class="cs-container">
+    <div class="cs-content">
+      <span class="cs-topper">Karriere</span>
+      <h2 class="cs-title">Werden Sie Teil unseres Expert:innen-Teams</h2>
+      <p class="cs-text">
+        Wir suchen engagierte Mitarbeiter:innen, die unsere Leidenschaft für
+        erstklassige Zahnmedizin teilen. In unserem modernen Praxisumfeld bieten
+        wir Ihnen die Möglichkeit, Ihre Fähigkeiten weiterzuentwickeln und Teil
+        eines dynamischen Teams zu werden.
+      </p>
+    </div>
+    <div class="cs-wrapper">
+      <picture class="cs-picture">
+        <source
+          media="(max-width: 600px)"
+          srcset="
+            https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dentist9.jpeg
+          "
+        />
+        <source
+          media="(min-width: 601px)"
+          srcset="
+            https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dentist9.jpeg
+          "
+        />
+        <img
+          loading="lazy"
+          decoding="async"
+          src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dentist9.jpeg"
+          alt="Zahnmedizinische Behandlung"
+          width="340"
+          height="580"
+          aria-hidden="true"
+        />
+      </picture>
+      <div class="cs-events">
+        <ul class="cs-card-group">
+          <li class="cs-item">
+            <div class="cs-info-wrapper">
+              <div class="cs-info">
+                <h3 class="cs-h3">Zahnmedizinische:r Fachangestellte:r</h3>
+                <div class="cs-flex">
+                  <span class="cs-location">
+                    <img
+                      class="cs-icon"
+                      src="/assets/svgs/pin.svg"
+                      alt="Symbol"
+                      width="16"
+                      height="16"
+                      loading="lazy"
+                      decoding="async"
+                      aria-hidden="true"
+                    />
+                    Köln Süd
+                  </span>
+                  <span class="cs-time">
+                    <img
+                      class="cs-icon"
+                      src="/assets/svgs/clock.svg"
+                      alt="Symbol"
+                      width="16"
+                      height="16"
+                      loading="lazy"
+                      decoding="async"
+                      aria-hidden="true"
+                    />
+                    Vollzeit / Teilzeit
+                  </span>
+                </div>
+                <p class="cs-text">
+                  Unterstützen Sie unser Team bei der Patientenbetreuung und
+                  assistieren Sie bei zahnmedizinischen Behandlungen. Wir bieten
+                  Ihnen eine vielseitige Tätigkeit in einem modernen
+                  Arbeitsumfeld mit Entwicklungsmöglichkeiten.
+                </p>
+              </div>
+              <a href="" class="cs-button-solid">Jetzt Bewerben</a>
+            </div>
+          </li>
+          <li class="cs-item">
+            <div class="cs-info-wrapper">
+              <div class="cs-info">
+                <h3 class="cs-h3">Dentalhygieniker:in</h3>
+                <div class="cs-flex">
+                  <span class="cs-time">
+                    <img
+                      class="cs-icon"
+                      src="/assets/svgs/pin.svg"
+                      alt="Symbol"
+                      width="16"
+                      height="16"
+                      loading="lazy"
+                      decoding="async"
+                      aria-hidden="true"
+                    />
+                    Köln Süd
+                  </span>
+                  <span class="cs-time">
+                    <img
+                      class="cs-icon"
+                      src="/assets/svgs/clock.svg"
+                      alt="Symbol"
+                      width="16"
+                      height="16"
+                      loading="lazy"
+                      decoding="async"
+                      aria-hidden="true"
+                    />
+                    Vollzeit
+                  </span>
+                </div>
+                <p class="cs-text">
+                  Führen Sie selbstständig Prophylaxebehandlungen durch und
+                  beraten Sie unsere Patienten zu optimaler Mundhygiene. Wir
+                  bieten Ihnen ein attraktives Arbeitsumfeld mit modernster
+                  Ausstattung.
+                </p>
+              </div>
+              <a href="" class="cs-button-solid">Jetzt Bewerben</a>
+            </div>
+          </li>
+          <li class="cs-item">
+            <div class="cs-info-wrapper">
+              <div class="cs-info">
+                <h3 class="cs-h3">Rezeptionist:in</h3>
+                <div class="cs-flex">
+                  <span class="cs-time">
+                    <img
+                      class="cs-icon"
+                      src="/assets/svgs/pin.svg"
+                      alt="Symbol"
+                      width="16"
+                      height="16"
+                      loading="lazy"
+                      decoding="async"
+                      aria-hidden="true"
+                    />
+                    Köln Süd
+                  </span>
+                  <span class="cs-time">
+                    <img
+                      class="cs-icon"
+                      src="/assets/svgs/clock.svg"
+                      alt="Symbol"
+                      width="16"
+                      height="16"
+                      loading="lazy"
+                      decoding="async"
+                      aria-hidden="true"
+                    />
+                    Vollzeit
+                  </span>
+                </div>
+                <p class="cs-text">
+                  Seien Sie die erste Anlaufstelle für unsere Patienten und
+                  koordinieren Sie Termine und administrative Aufgaben. Wir
+                  suchen eine freundliche und organisierte Persönlichkeit für
+                  unser Empfangsteam.
+                </p>
+              </div>
+              <a href="" class="cs-button-solid">Jetzt Bewerben</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
 {% endblock %}
