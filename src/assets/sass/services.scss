@@ -8,6 +8,7 @@
     padding: var(--sectionPadding);
     overflow: hidden;
     position: relative;
+    background-color: var(--darkBackground);
 
     .cs-container {
       width: 100%;
@@ -471,6 +472,7 @@
 @media only screen and (min-width: 0rem) {
   #steps-2014 {
     padding: var(--sectionPadding);
+    background-color: var(--darkBackground);
     overflow: hidden;
     position: relative;
 
@@ -509,6 +511,11 @@
 
     .cs-text {
       max-width: calc(900 / 16 * 1rem);
+      color: var(--bodyTextColorWhite);
+    }
+
+    .cs-title {
+      color: var(--bodyTextColorWhite);
     }
 
     .cs-card-group {

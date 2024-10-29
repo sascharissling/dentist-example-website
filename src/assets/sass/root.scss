@@ -16,6 +16,7 @@
     --bodyTextColor: #4e4b66; /* Kept original for readability */
     --bodyTextColorWhite: #ffffff; /* Pure white */
     --borderRadius: clamp(0.75rem, 2vw, 1.5rem);
+    --darkBackground: #061623;
 
     /* 13px - 16px */
     --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
@@ -97,7 +98,7 @@
       content: "";
       opacity: 1;
       display: block;
-      background-color: var(--dark);
+      background-color: var(--darkBackground);
       height: 100%;
 
       //Transition properties
@@ -532,7 +533,7 @@
 @media only screen and (max-width: 63.9375rem) {
   body.dark-mode {
     #cs-navigation {
-      background-color: var(--dark);
+      background-color: var(--darkBackground);
 
       .cs-line {
         background-color: var(--primary);
@@ -1387,7 +1388,7 @@
 /* Mobile */
 @media only screen and (min-width: 0rem) {
   #footer {
-    background: var(--dark);
+    background: var(--darkBackground);
     padding: calc(84 / 16 * 1rem) 0 calc(20 / 16 * 1rem);
     font-size: min(4vw, 1.2em);
 

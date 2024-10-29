@@ -7,6 +7,7 @@
     padding: var(--sectionPadding);
     overflow: hidden;
     position: relative;
+    background-color: var(--darkBackground);
   }
   #services-1977 .cs-container {
     width: 100%;
@@ -407,6 +408,7 @@
 @media only screen and (min-width: 0rem) {
   #steps-2014 {
     padding: var(--sectionPadding);
+    background-color: var(--darkBackground);
     overflow: hidden;
     position: relative;
   }
@@ -440,12 +442,12 @@
     /* centers content horizontally, set to flex-start to left align */
     align-items: center;
   }
-  #steps-2014 .cs-title,
-  #steps-2014 .cs-text {
-    color: var(--bodyTextColorWhite);
-  }
   #steps-2014 .cs-text {
     max-width: 56.25rem;
+    color: var(--bodyTextColorWhite);
+  }
+  #steps-2014 .cs-title {
+    color: var(--bodyTextColorWhite);
   }
   #steps-2014 .cs-card-group {
     width: 100%;

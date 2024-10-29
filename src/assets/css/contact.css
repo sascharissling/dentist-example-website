@@ -14,6 +14,7 @@
     overflow: hidden;
     position: relative;
     z-index: 1;
+    background-color: var(--darkBackground);
   }
   #banner-1519 .cs-container {
     text-align: center;
@@ -27,6 +28,7 @@
     flex-direction: column;
     /* 8px - 12px */
     gap: clamp(0.5rem, 1vw, 0.75rem);
+    background-color: var(--darkBackground);
   }
   #banner-1519 .cs-int-title {
     /* 39px - 61px */
