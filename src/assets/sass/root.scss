@@ -501,7 +501,7 @@
       display: block;
       background: rgba(0, 0, 0, 0.6);
       height: 100vh;
-      width: 0%;
+      width: 0;
       transition:
         width 0.5s,
         opacity 0.3s;
@@ -1122,7 +1122,7 @@
 
       &:before {
         content: "";
-        width: 0%;
+        width: 0;
         height: 100%;
         background: #fff;
         opacity: 1;
@@ -1590,7 +1590,7 @@
                 display: block;
                 background: var(--primary);
                 height: calc(2 / 16 * 1rem);
-                width: 0%;
+                width: 0;
                 transition: width 0.3s;
               }
 

@@ -27,7 +27,6 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
       /* 8px - 12px */
       gap: clamp(0.5rem, 1vw, 0.75rem);
       background-color: var(--darkBackground);
@@ -297,7 +296,7 @@
         /* current color of the parent */
         background: currentColor;
         height: 2px;
-        width: 0%;
+        width: 0;
         transition: width 0.3s;
       }
 
