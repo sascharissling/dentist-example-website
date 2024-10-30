@@ -160,7 +160,7 @@
     max-width: 82.5em;
     width: 90%;
     padding: 3.125em 1.25em;
-    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
   }
   .services .card {
     display: block;
