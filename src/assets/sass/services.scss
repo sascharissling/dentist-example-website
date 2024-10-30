@@ -273,49 +273,6 @@
       gap: clamp(1rem, 2vw, 1.5rem);
     }
 
-    .cs-button-solid {
-      font-size: calc(16 / 16 * 1rem);
-      font-weight: 700;
-      /* 46px - 56px */
-      line-height: clamp(2.875rem, 5.5vw, 3.5rem);
-      text-align: center;
-      text-decoration: none;
-      min-width: calc(150 / 16 * 1rem);
-      margin: 0;
-      /* prevents padding from adding to the width */
-      box-sizing: border-box;
-      /* 16px - 32px */
-      padding: 0 clamp(1rem, 2vw, 2rem);
-      background-color: var(--primary);
-      overflow: hidden;
-      color: #fff;
-      border: none;
-      border-radius: calc(8 / 16 * 1rem);
-      display: inline-block;
-      position: relative;
-      z-index: 1;
-
-      &:before {
-        content: "";
-        width: 0;
-        height: 100%;
-        background: #000;
-        opacity: 1;
-        border-radius: calc(4 / 16 * 1rem);
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        transition: width 0.3s;
-      }
-
-      &:hover {
-        &:before {
-          width: 100%;
-        }
-      }
-    }
-
     .cs-phone {
       text-decoration: none;
       display: flex;
@@ -604,49 +561,6 @@
         height: 100%;
         object-fit: cover;
         border-radius: calc(8 / 16 * 1rem);
-      }
-    }
-
-    .cs-button-solid {
-      font-size: calc(16 / 16 * 1rem);
-      font-weight: 700;
-      /* 46px - 56px */
-      line-height: clamp(2.875rem, 5.5vw, 3.5rem);
-      text-align: center;
-      text-decoration: none;
-      min-width: calc(150 / 16 * 1rem);
-      margin: calc(32 / 16 * 1rem) 0 0 0;
-      /* prevents padding from adding to the width */
-      box-sizing: border-box;
-      /* 32px - 48px */
-      padding: 0 clamp(2rem, 4vw, 3rem);
-      background-color: var(--primary);
-      overflow: hidden;
-      color: #fff;
-      border: none;
-      border-radius: calc(8 / 16 * 1rem);
-      display: inline-block;
-      position: relative;
-      z-index: 1;
-
-      &:before {
-        content: "";
-        width: 0;
-        height: 100%;
-        background: #000;
-        opacity: 1;
-        border-radius: calc(4 / 16 * 1rem);
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        transition: width 0.3s;
-      }
-
-      &:hover {
-        &:before {
-          width: 100%;
-        }
       }
     }
   }

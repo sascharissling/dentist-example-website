@@ -246,44 +246,6 @@
     /* 16px - 24px */
     gap: clamp(1rem, 2vw, 1.5rem);
   }
-  #services-1977 .cs-button-solid {
-    font-size: 1rem;
-    font-weight: 700;
-    /* 46px - 56px */
-    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
-    text-align: center;
-    text-decoration: none;
-    min-width: 9.375rem;
-    margin: 0;
-    /* prevents padding from adding to the width */
-    box-sizing: border-box;
-    /* 16px - 32px */
-    padding: 0 clamp(1rem, 2vw, 2rem);
-    background-color: var(--primary);
-    overflow: hidden;
-    color: #fff;
-    border: none;
-    border-radius: 0.5rem;
-    display: inline-block;
-    position: relative;
-    z-index: 1;
-  }
-  #services-1977 .cs-button-solid:before {
-    content: "";
-    width: 0;
-    height: 100%;
-    background: #000;
-    opacity: 1;
-    border-radius: 0.25rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: width 0.3s;
-  }
-  #services-1977 .cs-button-solid:hover:before {
-    width: 100%;
-  }
   #services-1977 .cs-phone {
     text-decoration: none;
     display: flex;
@@ -527,44 +489,6 @@
     height: 100%;
     object-fit: cover;
     border-radius: 0.5rem;
-  }
-  #steps-2014 .cs-button-solid {
-    font-size: 1rem;
-    font-weight: 700;
-    /* 46px - 56px */
-    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
-    text-align: center;
-    text-decoration: none;
-    min-width: 9.375rem;
-    margin: 2rem 0 0 0;
-    /* prevents padding from adding to the width */
-    box-sizing: border-box;
-    /* 32px - 48px */
-    padding: 0 clamp(2rem, 4vw, 3rem);
-    background-color: var(--primary);
-    overflow: hidden;
-    color: #fff;
-    border: none;
-    border-radius: 0.5rem;
-    display: inline-block;
-    position: relative;
-    z-index: 1;
-  }
-  #steps-2014 .cs-button-solid:before {
-    content: "";
-    width: 0;
-    height: 100%;
-    background: #000;
-    opacity: 1;
-    border-radius: 0.25rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: width 0.3s;
-  }
-  #steps-2014 .cs-button-solid:hover:before {
-    width: 100%;
   }
 }
 /* Tablet - 768px */

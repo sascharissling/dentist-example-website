@@ -65,45 +65,46 @@
 
   // Button - can be replaced using CodeStitch's "Button" Stitches
   .cs-button-solid {
-    z-index: 1;
-    position: relative;
-    display: inline-block;
-    background-color: var(--primary);
-    width: auto;
-    padding: 0 calc(30 / 16 * 1rem);
-    text-decoration: none;
-    text-transform: uppercase;
     font-size: calc(16 / 16 * 1rem);
-    line-height: calc(50 / 16 * 1em);
-    font-weight: bold;
-
-    // Transition Properties
-    color: #000;
-    transition: color 0.3s;
-    transition-delay: 0.1s;
+    font-weight: 700;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
     text-align: center;
-
-    &:hover {
-      color: #fff;
-      &:before {
-        width: 100%;
-      }
-    }
+    text-decoration: none;
+    min-width: calc(150 / 16 * 1rem);
+    margin: calc(32 / 16 * 1rem) 0 0 0;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+    /* 32px - 48px */
+    padding: 0 clamp(2rem, 4vw, 3rem);
+    background-color: var(--primary);
+    overflow: hidden;
+    color: #fff;
+    border: none;
+    border-radius: calc(8 / 16 * 1rem);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
 
     &:before {
-      z-index: -1;
+      content: "";
+      width: 0;
+      height: 100%;
+      background: var(--darkBackground);
+      opacity: 1;
+      border-radius: calc(4 / 16 * 1rem);
       position: absolute;
       top: 0;
       left: 0;
-      content: "";
-      opacity: 1;
-      display: block;
-      background-color: var(--darkBackground);
-      height: 100%;
-
-      //Transition properties
-      width: 0;
+      z-index: -1;
       transition: width 0.3s;
+      color: white;
+    }
+
+    &:hover {
+      &:before {
+        width: 100%;
+      }
     }
   }
 
@@ -1100,46 +1101,6 @@
         color: var(--primary);
       }
     }
-
-    .cs-button-solid {
-      font-size: calc(16 / 16 * 1rem);
-      font-weight: 700;
-      /* 46px - 56px */
-      line-height: clamp(2.875em, 5.5vw, 3.5em);
-      text-align: center;
-      text-decoration: none;
-      min-width: calc(150 / 16 * 1rem);
-      margin: 0;
-      /* prevents padding from adding to the width */
-      box-sizing: border-box;
-      padding: 0 calc(32 / 16 * 1rem);
-      color: #fff;
-      background-color: var(--primary);
-      display: inline-block;
-      position: relative;
-      z-index: 1;
-      transition: color 0.3s;
-
-      &:before {
-        content: "";
-        width: 0;
-        height: 100%;
-        background: #fff;
-        opacity: 1;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        transition: width 0.3s;
-      }
-
-      &:hover {
-        color: #1a1a1a;
-        &:before {
-          width: 100%;
-        }
-      }
-    }
   }
 }
 
@@ -1497,13 +1458,6 @@
       .buttons {
         display: flex;
         justify-content: center;
-      }
-
-      .cs-button-solid {
-        margin: 0;
-        height: calc(53 / 16 * 1rem);
-        width: calc(250 / 16 * 1rem);
-        padding-top: calc(3 / 16 * 1rem);
       }
     }
 
