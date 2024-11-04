@@ -5,7 +5,7 @@
 /* CodeStitch Root and Helpers */
 @media only screen and (min-width: 0rem) {
   :root {
-    --primary: #4ac29a; /* Mint green */
+    --primary: #2b8262;
     --primaryLight: #7eddc1; /* Lighter mint */
     --secondary: #4a6670; /* Steel blue */
     --secondaryLight: #708b94; /* Lighter steel blue */
