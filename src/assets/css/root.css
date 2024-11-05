@@ -1188,7 +1188,7 @@
   #footer .credit a {
     text-decoration: none;
     font-size: 1rem;
-    color: var(--primary);
+    color: var(--primaryLight);
   }
   #footer .credit a:hover {
     text-decoration: underline;
