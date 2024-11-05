@@ -27,6 +27,9 @@
     /* centers content horizontally, set to flex-start to left align */
     align-items: center;
   }
+  #services-1977 .cs-topper {
+    color: var(--primaryLight);
+  }
   #services-1977 .cs-title,
   #services-1977 .cs-text {
     color: #fff;
@@ -151,8 +154,8 @@
     margin-top: auto;
     /* 24px - 32px */
     margin-bottom: clamp(1.5rem, 3.2vw, 2rem);
-    color: var(--primary);
-    border-bottom: 1px solid var(--primary);
+    color: var(--primaryLight);
+    border-bottom: 1px solid var(--primaryLight);
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -459,6 +462,9 @@
     text-align: inherit;
     margin: 0 0 1.5rem 0;
     color: var(--bodyTextColor);
+  }
+  #steps-2014 .cs-topper {
+    color: var(--primaryLight);
   }
   #steps-2014 .cs-number-wrapper {
     width: 3rem;

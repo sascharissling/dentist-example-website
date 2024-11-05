@@ -132,7 +132,7 @@
 /* Large Desktop Parallax Effect - 100px */
 @media only screen and (min-width: 100rem) {
   #hero-1950 .cs-background {
-    background: url("/assets/images/hero-image.jpg");
+    background: url("/assets/images/hero-image.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

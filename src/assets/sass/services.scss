@@ -30,6 +30,10 @@
       align-items: center;
     }
 
+    .cs-topper {
+      color: var(--primaryLight);
+    }
+
     .cs-title,
     .cs-text {
       color: #fff;
@@ -167,8 +171,8 @@
       margin-top: auto;
       /* 24px - 32px */
       margin-bottom: clamp(1.5rem, 3.2vw, 2rem);
-      color: var(--primary);
-      border-bottom: 1px solid var(--primary);
+      color: var(--primaryLight);
+      border-bottom: 1px solid var(--primaryLight);
       display: flex;
       justify-content: flex-start;
       align-items: center;
@@ -528,6 +532,10 @@
       text-align: inherit;
       margin: 0 0 calc(24 / 16 * 1rem) 0;
       color: var(--bodyTextColor);
+    }
+
+    .cs-topper {
+      color: var(--primaryLight);
     }
 
     .cs-number-wrapper {
