@@ -1,7 +1,7 @@
 ---
 title: "Pixel Perfect Websites | Code Stitch Web Designs | Denver, CO"
 description: "Meta description for the page"
-preloadImg: "/assets/images/hero-image.jpg"
+preloadImg: "/assets/images/hero-image.webp"
 permalink: "/"
 tags: "sitemap" # Sitemap will use all pages in content/, due to content.json. As index.html is not included in content/ we need to manually add the sitemap tag to this page (only).
 eleventyNavigation:
@@ -93,11 +93,17 @@ eleventyNavigation:
 
   <!-- Background Image, there's a background image in the CSS for the parallax effect you'll need to change as well if you swap out our images -->
   <picture class="cs-background">
-    <source media="(max-width: 600px)" srcset="/assets/images/hero-image.jpg" />
-    <source media="(min-width: 601px)" srcset="/assets/images/hero-image.jpg" />
+    <source
+      media="(max-width: 600px)"
+      srcset="/assets/images/hero-image.webp"
+    />
+    <source
+      media="(min-width: 601px)"
+      srcset="/assets/images/hero-image.webp"
+    />
     <img
       decoding="async"
-      src="/assets/images/hero-image.jpg"
+      src="/assets/images/hero-image.webp"
       alt="Zahnarzt"
       width="2250"
       height="1500"
